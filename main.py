@@ -6,6 +6,7 @@ from yt_dlp import YoutubeDL
 def download_mp3(url, outtmpl):
     opts = {
         "format": "bestaudio/best",
+        "cookiefile": "cookies.txt",
         "outtmpl": outtmpl,  # <- IMPORTANT
         "postprocessors": [
             {
@@ -29,7 +30,8 @@ def try_format(url, quality, ydl_format, outtmpl):
             "format": ydl_format,
             "outtmpl": outtmpl,  # <- forced filename
             "merge_output_format": "mp4",
-            "quiet": True
+            "quiet": True,
+            "cookiefile": "cookies.txt"
         }
         with YoutubeDL(opts) as ydl:
             ydl.download([url])
@@ -64,3 +66,4 @@ def download_video(url, quality, outtmpl):
             return
 
     print(f"❌ All formats failed for {quality}")
+
