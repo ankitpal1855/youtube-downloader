@@ -1,4 +1,4 @@
-const BASE_URL = "http://172.30.225.147:8000";
+const BASE_URL = "https://youtube-downloader-6hqj.onrender.com";
 
 const $ = s => document.querySelector(s);
 
@@ -81,3 +81,4 @@ formats.addEventListener("click", e => {
   if (!btn) return;
   download(btn.dataset.q);
 });
+
